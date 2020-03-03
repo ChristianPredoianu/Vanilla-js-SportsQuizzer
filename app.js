@@ -91,6 +91,14 @@ checkCorrectAnswer = quizData => {
     }
   });
 
+  showCorrectAnswer = quizData => {
+    li.forEach(answer => {
+      if (answer.textContent === quizData[indexCount].correct_answer) {
+        answer.classList.add('correct-answer');
+      }
+    });
+  };
+
   removeAnswerClasses = () => {
     li.forEach(function(listItem) {
       listItem.classList.remove('incorrect-answer');
@@ -131,13 +139,5 @@ showTotalScore = () => {
 resetGame = () => {
   playAgainBtn.addEventListener('click', function() {
     location.reload();
-  });
-};
-
-showCorrectAnswer = quizData => {
-  li.forEach(function(answer) {
-    if (answer.textContent === quizData[indexCount].correct_answer) {
-      answer.classList.add('correct-answer');
-    }
   });
 };
