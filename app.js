@@ -43,7 +43,7 @@ startQuizBtn.addEventListener('click', () => {
   }
 });
 
-playQuiz = quizData => {
+playQuiz = (quizData) => {
   displayQuestion(quizData);
   shuffleAnswers();
   displayAnswers(quizData);
@@ -52,11 +52,11 @@ playQuiz = quizData => {
   resetGame();
 };
 
-displayQuestion = quizData => {
+displayQuestion = (quizData) => {
   checkEndGameQuestions(quizData);
 };
 
-displayAnswers = quizData => {
+displayAnswers = (quizData) => {
   checkEndGameAnswers(quizData);
 };
 
@@ -67,7 +67,7 @@ shuffleAnswers = () => {
   }
 };
 
-nextQuestion = quizData => {
+nextQuestion = (quizData) => {
   nextQuestionBtn.addEventListener('click', () => {
     indexCount += 1;
     displayQuestion(quizData);
@@ -77,8 +77,8 @@ nextQuestion = quizData => {
   });
 };
 
-checkCorrectAnswer = quizData => {
-  ul.addEventListener('click', e => {
+checkCorrectAnswer = (quizData) => {
+  ul.addEventListener('click', (e) => {
     if (e.target.matches('li')) {
       e.target.parentElement.classList.add('disabled');
       showCorrectAnswer(quizData);
@@ -91,8 +91,8 @@ checkCorrectAnswer = quizData => {
     }
   });
 
-  showCorrectAnswer = quizData => {
-    li.forEach(answer => {
+  showCorrectAnswer = (quizData) => {
+    li.forEach((answer) => {
       if (answer.textContent === quizData[indexCount].correct_answer) {
         answer.classList.add('correct-answer');
       }
@@ -100,7 +100,7 @@ checkCorrectAnswer = quizData => {
   };
 
   removeAnswerClasses = () => {
-    li.forEach(function(listItem) {
+    li.forEach(function (listItem) {
       listItem.classList.remove('incorrect-answer');
       listItem.classList.remove('correct-answer');
       listItem.parentElement.classList.remove('disabled');
@@ -108,7 +108,7 @@ checkCorrectAnswer = quizData => {
   };
 };
 
-checkEndGameQuestions = quizData => {
+checkEndGameQuestions = (quizData) => {
   if (!(indexCount === parseInt(questionsAmount.value))) {
     questionDiv.innerHTML = `<p>${quizData[indexCount].question}</p>`;
   } else {
@@ -120,7 +120,7 @@ checkEndGameQuestions = quizData => {
   }
 };
 
-checkEndGameAnswers = quizData => {
+checkEndGameAnswers = (quizData) => {
   if (!(indexCount === parseInt(questionsAmount.value))) {
     answerOne.textContent = quizData[indexCount].correct_answer;
     answerTwo.textContent = quizData[indexCount].incorrect_answers[0];
@@ -137,7 +137,7 @@ showTotalScore = () => {
 };
 
 resetGame = () => {
-  playAgainBtn.addEventListener('click', function() {
+  playAgainBtn.addEventListener('click', function () {
     location.reload();
   });
 };
