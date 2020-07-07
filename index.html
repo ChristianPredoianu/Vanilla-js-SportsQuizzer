@@ -10,8 +10,10 @@
     <header class="header">
       <h1>Sports Quizzer</h1>
     </header>
-    <main class="main-content">
-      <div class="quiz-container">
+
+    <div class="quiz-container">
+      <div class="input-questions" id="input-questions">
+        <div class="question"></div>
         <div class="answer-container">
           <ul id="list">
             <li class="answer-one"></li>
@@ -20,24 +22,20 @@
             <li class="answer-four"></li>
           </ul>
         </div>
-        <div class="input-questions" id="input-questions">
-          <div class="question"></div>
-          <div class="score" id="score"></div>
-          <label for="amount-of-questions" id="label-amount"
-            >Amount of questions:</label
-          >
-          <input type="number" id="amount-of-questions" /><br />
+        <div class="score" id="score"></div>
+        <label for="amount-of-questions" id="label-amount"
+          >Amount of questions:</label
+        >
+        <input type="number" id="amount-of-questions" /><br />
 
-          <button class="btn-start" id="btn-start">Start quiz</button>
-          <p class="alert-message">You must enter a number of questions</p>
-          <button class="btn-play-again" id="btn-play-again">Play again</button>
-        </div>
-
-        <button class="next-questionBtn" id="next-questionBtn">
-          Next question
-        </button>
+        <button class="btn-start" id="btn-start">Start quiz</button>
+        <p class="alert-message">You must enter a number of questions</p>
+        <button class="btn-play-again" id="btn-play-again">Play again</button>
       </div>
-    </main>
+      <button class="next-questionBtn" id="next-questionBtn">
+        Next question
+      </button>
+    </div>
 
     <script src="app.js"></script>
   </body>
