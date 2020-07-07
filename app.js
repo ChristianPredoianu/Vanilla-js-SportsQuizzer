@@ -42,7 +42,6 @@ function initGame() {
       getQuiz(questionsAmount.value).then((data) => {
         playGame(data);
         nextQuestionBtn.classList.add('disabled');
-        console.log(data);
       });
     }
   });
@@ -88,12 +87,10 @@ function checkCorrectAnswer(data) {
     }
     if (e.target.textContent === data.results[currentIndex].correct_answer) {
       e.target.classList.add('correct-answer');
-      console.log(e.target);
       scoreCount += 1;
     } else {
       e.target.classList.add('incorrect-answer');
       showCorrectAnswer(data);
-      console.log(e.target);
     }
   });
 }
@@ -126,8 +123,6 @@ function nextQuestion(data) {
       displayAnswers(data);
       shuffleAnswers();
       removeAnswerClasses();
-      console.log('index' + currentIndex);
-      console.log('amount of questions' + questionsAmount.value);
     } else {
       nextQuestionBtn.style.display = 'none';
       questionDiv.style.display = 'none';
